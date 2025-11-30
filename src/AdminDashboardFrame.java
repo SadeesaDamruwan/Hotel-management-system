@@ -84,6 +84,8 @@ public class AdminDashboardFrame extends JFrame {
         cardLayout = new CardLayout();
         mainContentPanel = new JPanel(cardLayout);
         mainContentPanel.setOpaque(false);
+        GuestActivityManagement guestActivityBackend = new GuestActivityManagement();
+
 
         // --- ADDING THE VIEWS ---
         mainContentPanel.add(createDashboardHome(), "Dashboard");
@@ -160,6 +162,12 @@ public class AdminDashboardFrame extends JFrame {
         sidebar.add(createNavButton("View Reports", "ICON_REPORTS", false));
         sidebar.add(createNavButton("Settings", "ICON_SETTINGS", false));
 
+        // --- Guest Activity ---
+        JButton btnGuestActivity = createNavButton("Guest Activity", "ICON_STAFF", false);
+        btnGuestActivity.addActionListener(e -> cardLayout.show(mainContentPanel, "GuestActivity"));
+        sidebar.add(btnGuestActivity);
+
+
         // Footer
         sidebar.add(Box.createVerticalGlue());
         JPanel featuresPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -169,19 +177,9 @@ public class AdminDashboardFrame extends JFrame {
         featuresPanel.setBorder(new EmptyBorder(10, 15, 10, 15));
         sidebar.add(featuresPanel);
 
-        // --- Guest Activity Button ---
-        JButton btnGuestActivity = new JButton("Guest Activity");
-        btnGuestActivity.setFont(new Font("Segoe UI", Font.PLAIN, 14));
-        btnGuestActivity.setBounds(10, 360, 170, 40); // adjust Y position if needed
-        btnGuestActivity.setFocusPainted(false);
-        btnGuestActivity.setBackground(new Color(50, 50, 50));
-        btnGuestActivity.setForeground(Color.WHITE);
 
-        btnGuestActivity.addActionListener(e -> {
-            cardLayout.show(mainContentPanel, "GuestActivity");
-        });
 
-        sidebar.add(btnGuestActivity);
+
 
 
         return sidebar;
