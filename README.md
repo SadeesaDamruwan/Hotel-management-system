@@ -1,4 +1,4 @@
-# Hotel Management System - Admin Dashboard
+# Hotel Management System
 
 A modern, Java Swing-based desktop application for hotel administration. This dashboard provides a sleek, dark-themed interface for managing staff, room status, and pricing adjustments.
 
