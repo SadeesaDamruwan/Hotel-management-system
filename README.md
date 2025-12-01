@@ -83,14 +83,5 @@ ProjectRoot/
 - **"Background image not found"**: Ensure the `Rescources` folder is in the correct location relative to your compiled class files (classpath). In many IDEs, this folder should be under `src`
 - **UI Glitches**: This app uses custom transparency. Ensure your graphics drivers are up to date. The transparency effect relies on proper graphics rendering
 
-## License
-
-This project is open source and available for educational purposes.
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
----
 
 **Developed with ☕ and Java Swing**
